@@ -1,0 +1,107 @@
+nav {
+    position: sticky;
+    top: 0;
+    background-color: azure;
+}
+
+nav ul {
+    display: flex;
+    justify-content: space-between;
+    list-style-type: none;
+    margin-left: 5%;
+    margin-right: 5%;
+    padding-left: 2%;
+    padding-right: 2%;
+}
+
+nav ul li {
+    padding: 2%;
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+header h1, h2 {
+    text-align: center;
+}
+
+#team-results {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#team-results table {
+    text-align: center;
+}
+
+#team-results table thead {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+#team-results table tbody tr:nth-child(odd) {
+    background-color: #dcdcdc;
+}
+
+#individual-results {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#athlete-results {
+    display: grid;
+    grid-gap: 15px;
+    padding: 10px;
+    grid-template-columns: repeat(auto-fit, minmax(225px, 1fr));
+    width: 100%;
+}
+
+#individual-results .athlete {
+    display: flex;
+    flex-direction: column;
+    background-color: aqua;
+}
+
+#individual-results .athlete figure {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+#individual-results .athlete dl {
+    display: grid;
+    grid-template-columns: auto auto; 
+    column-gap: 10px;
+    row-gap: 10px; 
+    margin: 0;
+    padding: 0;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#individual-results .athlete dt, dd {
+    margin: 0;
+    padding: 10px;
+}
+
+#individual-results .athlete dt {
+    font-weight: bold;
+}
+
+#individual-results .athlete dd {
+    align-items: center;
+}
+
+footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #dcdcdc;
+}
