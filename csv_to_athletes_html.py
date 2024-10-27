@@ -52,7 +52,6 @@ def gen_athlete_page(data, outfile):
        <script src="https://kit.fontawesome.com/YOUR_ID.js" crossorigin="anonymous"></script>
 
 
-      <link rel = "stylesheet" href = "css/reset.css">
       <link rel = "stylesheet" href = "css/style.css">
       
 
