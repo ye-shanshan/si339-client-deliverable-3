@@ -37,6 +37,7 @@ def csv_to_html(csv_filename, output_folder):
    <body>
    <a href = "#main">Skip to Main Content</a>
    <button onclick="myFunction()">Toggle dark mode</button>
+   <button onclick="contrast()">Toggle high contrast mode</button>
    <nav>
      <ul>
         <li><a href="index.html">Home Page</a></li>
@@ -109,8 +110,10 @@ def csv_to_html(csv_filename, output_folder):
 </dl>
 </div>
 """
-        script = """{var element = document.body;
-        element.classList.toggle("dark-mode");}"""
+        script = """function myFunction() {var element = document.body;
+        element.classList.toggle("dark-mode");}
+        function contrast() {var element = document.body;
+        element.classList.toggle("high-contrast");}"""
 
         html_content += """</div></section>\n
         <section id = "gallery">
@@ -135,8 +138,8 @@ def csv_to_html(csv_filename, output_folder):
 
                      </footer>
         <script>
-        function myFunction() {script}
-    </script>
+        {script}
+        </script>
         </body>
 </html>
 """
@@ -259,8 +262,10 @@ print(html_gallery)
 
 def make_index ():
     global meet_links
-    script = """{var element = document.body;
-        element.classList.toggle("dark-mode");}"""
+    script = """function myFunction() {var element = document.body;
+        element.classList.toggle("dark-mode");}
+        function contrast() {var element = document.body;
+        element.classList.toggle("high-contrast");}"""
     index_file = f"""
         <!DOCTYPE html>
 <html lang="en">
@@ -274,6 +279,7 @@ def make_index ():
    <body>
    <header>
       <button onclick="myFunction()">Toggle dark mode</button>
+      <button onclick="contrast()">Toggle high contrast mode</button>
       <h1>Ann Arbor Saline XC</h1>
    </header>
     <main id = "index">
@@ -283,7 +289,7 @@ def make_index ():
         </table>
     </main>
     <script>
-        function myFunction() {script}
+        {script}
     </script>
     </body>
 </html>

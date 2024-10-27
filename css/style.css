@@ -96,6 +96,29 @@ header h1, h2 {
     border-radius: 5%;
 }
 
+#athlete-results > *:nth-child(-n+3) {
+    -webkit-mask-image: linear-gradient(-75deg, rgba(0,0,0,.6) 30%, #000 50%, rgba(0,0,0,.6) 70%);
+    -webkit-mask-size: 200%;
+    animation: shine 2s infinite;
+}
+
+@-webkit-keyframes shine {
+    from {
+    -webkit-mask-position: 150%;
+    }
+    
+    to {
+    -webkit-mask-position: -50%;
+    }
+}
+
+@media (prefers-reduced-motion) {
+    #athlete-results > *:nth-child(-n+3) {
+      animation: none;
+    }
+}
+
+
 #individual-results .athlete figure {
     display: flex;
     flex-direction: column;
@@ -178,6 +201,11 @@ footer a:visited {
     color: white;
 }
 
+.high-contrast {
+    background-color: white;
+    color: black;
+}
+
 h1, body a:link { 
     text-decoration: underline;
     color: black;
@@ -187,3 +215,37 @@ h1, body a:visited {
     text-decoration: underline;
     color: black;
 }
+
+.animation {
+    -webkit-mask-image: linear-gradient(-75deg, rgba(0,0,0,.6) 30%, #000 50%, rgba(0,0,0,.6) 70%);
+    -webkit-mask-size: 200%;
+    animation: shine 2s infinite;
+    background-color: blue;
+    }
+    @-webkit-keyframes shine {
+      from {
+        -webkit-mask-position: 150%;
+      }
+      
+      to {
+        -webkit-mask-position: -50%;
+      }
+}
+
+/* effect-shine 
+a.effect-shine:hover {
+  -webkit-mask-image: linear-gradient(-75deg, rgba(0,0,0,.6) 30%, #000 50%, rgba(0,0,0,.6) 70%);
+  -webkit-mask-size: 200%;
+  animation: shine 2s infinite;
+}
+
+@-webkit-keyframes shine {
+  from {
+    -webkit-mask-position: 150%;
+  }
+  
+  to {
+    -webkit-mask-position: -50%;
+  }
+}
+  */

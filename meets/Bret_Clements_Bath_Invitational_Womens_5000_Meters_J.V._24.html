@@ -11,6 +11,7 @@
    <body>
    <a href = "#main">Skip to Main Content</a>
    <button onclick="myFunction()">Toggle dark mode</button>
+   <button onclick="contrast()">Toggle high contrast mode</button>
    <nav>
      <ul>
         <li><a href="index.html">Home Page</a></li>
@@ -247,6 +248,8 @@
         <script>
         function myFunction() {var element = document.body;
         element.classList.toggle("dark-mode");}
-    </script>
+        function contrast() {var element = document.body;
+        element.classList.toggle("high-contrast");}
+        </script>
         </body>
 </html>

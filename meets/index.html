@@ -11,6 +11,7 @@
    <body>
    <header>
       <button onclick="myFunction()">Toggle dark mode</button>
+      <button onclick="contrast()">Toggle high contrast mode</button>
       <h1>Ann Arbor Saline XC</h1>
    </header>
     <main id = "index">
@@ -122,6 +123,8 @@
     <script>
         function myFunction() {var element = document.body;
         element.classList.toggle("dark-mode");}
+        function contrast() {var element = document.body;
+        element.classList.toggle("high-contrast");}
     </script>
     </body>
 </html>
