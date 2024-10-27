@@ -36,6 +36,7 @@ def csv_to_html(csv_filename, output_folder):
 </head>
    <body>
    <a href = "#main">Skip to Main Content</a>
+   <button onclick="myFunction()">Toggle dark mode</button>
    <nav>
      <ul>
         <li><a href="index.html">Home Page</a></li>
@@ -108,6 +109,8 @@ def csv_to_html(csv_filename, output_folder):
 </dl>
 </div>
 """
+        script = """{var element = document.body;
+        element.classList.toggle("dark-mode");}"""
 
         html_content += """</div></section>\n
         <section id = "gallery">
@@ -116,7 +119,7 @@ def csv_to_html(csv_filename, output_folder):
 
         html_content += create_meet_image_gallery(url)
         # Close the HTML document
-        html_content += """
+        html_content += f"""
    </section>
    </main>   
    <footer>
@@ -131,6 +134,9 @@ def csv_to_html(csv_filename, output_folder):
 
 
                      </footer>
+        <script>
+        function myFunction() {script}
+    </script>
         </body>
 </html>
 """
@@ -147,9 +153,9 @@ def csv_to_html(csv_filename, output_folder):
         global meet_links
         html_filename = os.path.basename(html_filename)
         meet_links += f""" 
-        <td>
+        <tr><td>
             <a href="{html_filename}">{link_text}</a>
-        </td>\n
+        </tr></td>\n
         """
 
 
@@ -253,6 +259,8 @@ print(html_gallery)
 
 def make_index ():
     global meet_links
+    script = """{var element = document.body;
+        element.classList.toggle("dark-mode");}"""
     index_file = f"""
         <!DOCTYPE html>
 <html lang="en">
@@ -265,16 +273,18 @@ def make_index ():
 </head>
    <body>
    <header>
+      <button onclick="myFunction()">Toggle dark mode</button>
       <h1>Ann Arbor Saline XC</h1>
    </header>
-    <main id = "main">
+    <main id = "index">
         <h2>2024 Meets</h2>
         <table>
-            <tr>
-                {meet_links}
-            </tr>
+            {meet_links}
         </table>
     </main>
+    <script>
+        function myFunction() {script}
+    </script>
     </body>
 </html>
     """
